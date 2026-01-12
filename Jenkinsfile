@@ -5,14 +5,14 @@ pipeline {
     }
 
     tools {
-        nodejs "Node25"
+        nodejs "NodeJS 25.2.1"
         dockerTool "Dockertool"
     }
 
     stages {
         stage('Instalar dependencias') {
             steps {
-                sh 'npm ci --unsafe-perm'
+                sh 'npm install'
             }
         }
 

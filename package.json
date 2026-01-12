@@ -4,7 +4,6 @@
     "description": "Mi aplicación Node.js",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
         "test": "jest"
     },
     "jest" : {
@@ -12,10 +11,8 @@
     },
     "dependencies": {
         "express": "^4.22.1",
+        "jest": "^30.2.0",
         "supertest": "^7.2.2"
-    },
-    "devDependencies": {
-        "jest": "^30.2.0"
     },
     "repository": {
         "type": "git",
@@ -29,10 +26,8 @@
         "url": "https://github.com/Gabriele1013/jenkinsDespliegue/issues"
     },
     "homepage": "https://github.com/Gabriele1013/jenkinsDespliegue#readme",
+    "devDependencies": {},
     "directories": {
         "test": "tests"
-    },
-    "engines": {
-        "node": "25.x"
     }
 }
