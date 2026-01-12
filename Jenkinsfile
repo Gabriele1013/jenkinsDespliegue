@@ -1,15 +1,18 @@
 pipeline {
     agent any
+    environment {
+        NPM_CONFIG_UNSAFE_PERM = 'true'
+    }
 
     tools {
-        nodejs "Node25"
-        dockerTool "Dockertool" 
+        nodejs "NodeJS 25.2.1"
+        dockerTool "Dockertool"
     }
 
     stages {
         stage('Instalar dependencias') {
             steps {
-                sh 'npm install'
+                sh 'npm ci --unsafe-perm'
             }
         }
 
