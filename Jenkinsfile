@@ -5,7 +5,7 @@ pipeline {
     }
 
     tools {
-        nodejs "NodeJS 25.2.1"
+        nodejs "Node25"
         dockerTool "Dockertool"
     }
 
