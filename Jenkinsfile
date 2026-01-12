@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    environment {
-        NPM_CONFIG_UNSAFE_PERM = 'true'
-    }
 
     tools {
-        nodejs "NodeJS 25.2.1"
-        dockerTool "Dockertool"
+        nodejs "Node25"
+        dockerTool "Dockertool" 
     }
 
     stages {
@@ -18,8 +15,7 @@ pipeline {
 
         stage('Ejecutar tests') {
             steps {
-                sh 'chmod +x ./node_modules/.bin/jest'  // Soluciona el problema de permisos
-                sh 'npm test -- --ci --runInBand'
+                sh 'npm test'
             }
         }
 
