@@ -28,7 +28,7 @@ const writeDatabase = (data) => {
 // CRUD de usuarios
 app.get('/', (req, res) => {
     const msg = {
-        message: 'Servidor en ejecucion en el puerto 3000',
+        message: 'Servidor en ejecución en el puerto 3000',
         status: 200
     }
     res.json(msg);
@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 // 1. Obtener todos los usuarios
 app.get('/users', (req, res) => {
     const users = readDatabase();
-    res.json(users);
+    res.json({ users });
 });
 
 // 2. Crear un nuevo usuario
@@ -111,7 +111,12 @@ app.get('/users/:id', (req, res) => {
     res.json({ user });
 });
 
+module.exports = app;
+
 // Iniciar el servidor
-app.listen(PORT, '0.0.0.0', () => {
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
 });
+}
+
